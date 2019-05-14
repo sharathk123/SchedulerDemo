@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 import org.springframework.stereotype.Component;
 
@@ -15,13 +14,9 @@ import com.example.demo.service.SchedulerService;
 public class TaskSchedulerService {
 
 	@Autowired
-	private ThreadPoolTaskScheduler taskScheduler;
-
-	@Autowired
 	private SchedulerService schedulerService;
 
-	@Scheduled(fixedRate = 1000)
-	public void scheduleTasks() {
+	public void scheduleTasks(ThreadPoolTaskScheduler taskScheduler) {
 		List<Scheduler> appSchedules = this.schedulerService.getAllSchedulers();
 		
 		for (Scheduler sch : appSchedules) {
