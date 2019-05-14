@@ -1,2 +1,2 @@
 # SchedulerDemo
-Schedulers in Spring Boot
+Dynamic Schedulers in Spring Boot
