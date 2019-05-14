@@ -13,11 +13,9 @@ import com.example.demo.service.SchedulerService;
 public class SchedulerController {
 	@Autowired
 	private SchedulerService sehedulerService;
-	
 
-    @GetMapping("/schedulers")
-    private List<Scheduler> getAllPersons() {
-        return sehedulerService.getAllSchedulers();
-    }
-
+	@GetMapping("/schedulers")
+	private List<Scheduler> getAllOpenScheules() {
+		return sehedulerService.getAllSchedulers();
+	}
 }
